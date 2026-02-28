@@ -22,7 +22,7 @@ int main() {
   int populacao2;
   float area2;
   float pib2;
-  int numdepontosturiscos2;
+  int numdepontosturisticos2;
 
       //<<ATENÇÃO>> Duas informações "úteis" sobre o código acima.    
           //Após uma pesquisa rápida, o nome mais longe de uma cidade são 32 caracteres, só arredondei para 35 para ficar melhor.
@@ -58,10 +58,47 @@ int main() {
 
   printf("\n\nAgora, vamos para a segunda carta!!!\n\n");
 
+  printf("Vamos escolher uma única letra de um estado (de A até o H): ");
+   scanf(" %c", &estado2);
+      //printf("sua letra é: %c\n", estado2); Isso aqui foi usado para teste, para ver se a letra estava sendo armazenada corretamente.
+        //Foi usado fgets aqui como gambiarra, se usar scanf(" %c"), ele não aparece a letra.
 
+  printf("Agora, a letra do estado que escolheu junto com dois números de 1 a 4 (ex: A01, B02, etc): ");
+    scanf("%s", &codigodacarta2);
+
+  printf("Digite o nome da cidade: ");
+    scanf(" %[^\n]s", &nomedacidade2); // O " %[^\n]s" é para ler a string com espaços, ou seja, o nome da cidade pode ter mais de uma palavra.
+  printf("Digite a população da cidade: ");
+    scanf("%d", &populacao2);
+  
+  printf("Digite a área em km² (não coloque o km² na resposta) da cidade: ");
+    scanf("%f", &area2);
+  
+  printf("Digite o PIB da cidade: ");
+    scanf("%f", &pib2);
+
+  printf("Digite o número de pontos turísticos da cidade: ");
+    scanf("%d", &numdepontosturisticos2);
   
 
   // Área para exibição dos dados da cidade
- 
+  printf("\n\nCarta 1:\n");
+  printf("Estado: %s\n", estado1);
+  printf("Código da carta: %s\n", codigodacarta1);
+  printf("Nome da cidade: %s\n", nomedacidade1);
+  printf("População: %d\n", populacao1);
+  printf("Área: %.2f km²\n", area1);
+  printf("PIB: %.2f milhões de reais\n", pib1);
+  printf("Número de pontos turísticos: %d\n", numdepontosturisticos1);
+
+  printf("\nCarta 2:\n");
+  printf("Estado: %s\n", estado2);
+  printf("Código da carta: %s\n", codigodacarta2);
+  printf("Nome da cidade: %s\n", nomedacidade2);
+  printf("População: %d\n", populacao2);
+  printf("Área: %.2f km²\n", area2);
+  printf("PIB: %.2f milhões de reais\n", pib2);
+  printf("Número de pontos turísticos: %d\n", numdepontosturisticos2);
+
 return 0;
 } 
