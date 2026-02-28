@@ -61,8 +61,7 @@ int main() {
   printf("Vamos escolher uma única letra de um estado (de A até o H): ");
    scanf(" %c", &estado2);
       //printf("sua letra é: %c\n", estado2); Isso aqui foi usado para teste, para ver se a letra estava sendo armazenada corretamente.
-        //Foi usado fgets aqui como gambiarra, se usar scanf(" %c"), ele não aparece a letra.
-
+        
   printf("Agora, a letra do estado que escolheu junto com dois números de 1 a 4 (ex: A01, B02, etc): ");
     scanf("%s", &codigodacarta2);
 
@@ -90,6 +89,8 @@ int main() {
   printf("Área: %.2f km²\n", area1);
   printf("PIB: %.2f milhões de reais\n", pib1);
   printf("Número de pontos turísticos: %d\n", numdepontosturisticos1);
+
+      //Exibição dos dados da carta 2.
 
   printf("\nCarta 2:\n");
   printf("Estado: %s\n", estado2);
