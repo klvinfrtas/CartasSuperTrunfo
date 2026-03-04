@@ -7,22 +7,26 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
     //Informações das variáveis de carta 1.
-  char estado1[2];
-  char codigodacarta1[4];
-  char nomedacidade1 [35];
+  char estado1[3];
+  char codigodacarta1[5];
+  char nomedacidade1[35];
   int populacao1;
   float area1;
   float pib1;
   int numdepontosturisticos1;
+  float densidadepopulacional1;
+  float pibpercapita1;
 
     //Informações das variáveis da carta 2.
-  char estado2[2];
-  char codigodacarta2[4];
+  char estado2[3];
+  char codigodacarta2[5];
   char nomedacidade2[35];
   int populacao2;
   float area2;
   float pib2;
   int numdepontosturisticos2;
+  float densidadepopulacional2;
+  float pibpercapita2;
 
       //<<ATENÇÃO>> Duas informações "úteis" sobre o código acima.    
           //Após uma pesquisa rápida, o nome mais longe de uma cidade são 32 caracteres, só arredondei para 35 para ficar melhor.
@@ -33,15 +37,16 @@ int main() {
   printf("Olá!!! Seja bem-vindo ao jogo SuperTrunfo!\n\n");
 
   printf("Vamos escolher uma única letra de um estado (de A até o H): ");
-   fgets(estado1, 2, stdin);
+   fgets(estado1, 3, stdin);
       //printf("sua letra é: %s\n", estado1); Isso aqui foi usado para teste, para ver se a letra estava sendo armazenada corretamente.
-        //Foi usado fgets aqui como gambiarra, se usar scanf(" %c"), ele não aparece a letra.
-
+        //Optei por usar fgets.
+        
   printf("Agora, a letra do estado que escolheu junto com dois números de 1 a 4 (ex: A01, B02, etc): ");
-    scanf("%s", &codigodacarta1);
+    fgets(codigodacarta1, 5, stdin);
 
   printf("Digite o nome da cidade: ");
-    scanf(" %[^\n]s", &nomedacidade1); // O " %[^\n]s" é para ler a string com espaços, ou seja, o nome da cidade pode ter mais de uma palavra.
+    fgets(nomedacidade1, 33, stdin); // fgets usado para ler espaços e possíveis cidades maiores
+  
   printf("Digite a população da cidade: ");
     scanf("%d", &populacao1);
   
@@ -52,21 +57,29 @@ int main() {
     scanf("%f", &pib1);
 
   printf("Digite o número de pontos turísticos da cidade: ");
-    scanf("%d", &numdepontosturisticos1);
+    scanf("%i", &numdepontosturisticos1);
+      getchar();
 
-// Agora, para a carta 2.
+    densidadepopulacional1 = (float) populacao1 / area1;
+    pibpercapita1 = area1 / pib1; 
+    /*Coloque sempre uma area maior que o pib.
+      EX: area = 1500.50
+          pib = 750.50*/
+
+  // Agora, para a carta 2.
 
   printf("\n\nAgora, vamos para a segunda carta!!!\n\n");
 
   printf("Vamos escolher uma única letra de um estado (de A até o H): ");
-   scanf(" %c", &estado2);
+    fgets(estado2, 3, stdin);
       //printf("sua letra é: %c\n", estado2); Isso aqui foi usado para teste, para ver se a letra estava sendo armazenada corretamente.
         
   printf("Agora, a letra do estado que escolheu junto com dois números de 1 a 4 (ex: A01, B02, etc): ");
-    scanf("%s", &codigodacarta2);
+    fgets(codigodacarta2, 5, stdin);
 
   printf("Digite o nome da cidade: ");
-    scanf(" %[^\n]s", &nomedacidade2); // O " %[^\n]s" é para ler a string com espaços, ou seja, o nome da cidade pode ter mais de uma palavra.
+    fgets(nomedacidade2, 33, stdin); // fgets usado para ler espaços e possíveis cidades maiores
+  
   printf("Digite a população da cidade: ");
     scanf("%d", &populacao2);
   
@@ -78,6 +91,9 @@ int main() {
 
   printf("Digite o número de pontos turísticos da cidade: ");
     scanf("%d", &numdepontosturisticos2);
+
+    densidadepopulacional2 = (float) populacao2 / area2;
+    pibpercapita2 = area2 / pib2; 
   
 
   // Área para exibição dos dados da cidade
@@ -87,8 +103,10 @@ int main() {
   printf("Nome da cidade: %s\n", nomedacidade1);
   printf("População: %d\n", populacao1);
   printf("Área: %.2f km²\n", area1);
-  printf("PIB: %.2f milhões de reais\n", pib1);
+  printf("PIB: R$ %.2f milhões\n", pib1);
   printf("Número de pontos turísticos: %d\n", numdepontosturisticos1);
+  printf("Densidade Populacional: %.2f hab/km²\n", densidadepopulacional1);
+  printf("PIB per capita: R$ %.2f milhões\n", pibpercapita1);
 
       //Exibição dos dados da carta 2.
 
@@ -98,8 +116,10 @@ int main() {
   printf("Nome da cidade: %s\n", nomedacidade2);
   printf("População: %d\n", populacao2);
   printf("Área: %.2f km²\n", area2);
-  printf("PIB: %.2f milhões de reais\n", pib2);
+  printf("PIB: R$ %.2f milhões\n", pib2);
   printf("Número de pontos turísticos: %d\n", numdepontosturisticos2);
+  printf("Densidade Populacional: %.2f hab/km²\n", densidadepopulacional2);
+  printf("PIB per capita: R$ %.2f milhões\n", pibpercapita2);
 
 return 0;
 } 
