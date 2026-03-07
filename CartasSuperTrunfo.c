@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
@@ -185,6 +187,6 @@ int main() {
             }
   
   printf("\nEm densidade populacional, é feito o inverso, quem tiver a menor densidade, ganha.\n");
-  
+
 return 0;
 } 
